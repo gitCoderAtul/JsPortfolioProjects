@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPF Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="style.css"  rel="stylesheet">
+    <link href="chart.css" rel="stylesheet">
+    <link href="calculate.css" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/dist/images/calcLogo.png" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ppf-calc.html"> Calculators </a>
+            </li> 
+          </ul>
+        </div>
+        </div>
+      </nav>
+
+     <section id="sec-calculator">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="title">PPF Calculator</h1>
+                </div>
+            </div>
+
+            <!--
+                I   Rate of interest
+                F   Maturity of PPF
+                N   Total number of years
+                P   Annual instalments
+
+                P [({(1+i) ^n}-1)/i] 
+                {(1+i) ^n}
+                ({(1+i) ^n}-1)
+                ({(1+i) ^n}-1)/i
+                P [({(1+i) ^n}-1)/i]
+            
+            -->
+            <div class="row">
+                <div class="col-lg-8"> 
+                    <div class="calculator">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="range-group">
+                                <div class="form-group">
+                                    <label> Loan  amount</label>
+                                    <input type="text" class="form-control custm-control" id="txtLoanAmt" value="100000">
+                                </div>
+                                <div class="range-slider">                      
+                                    <input type="range" class="form-range" min="100000" max="10000000" step="50000" id="loanRangeSlider" value="100000">
+                                </div>
+                            </div>    
+                            <div class="range-group">
+                                <div class="form-group">
+                                    <label> Rate of Interest (p.a)</label>
+                                    <input type="text" class="form-control custm-control" id="txtROI" >
+                                </div>
+                                <div class="range-slider">                      
+                                    <input type="range" class="form-range" min="4" max="20" step="0.1" id="roiRangeSlider">
+                                </div>
+                            </div>    
+                            <div class="range-group">
+                                <div class="form-group">
+                                    <label> Loan  tenure</label>
+                                    <input type="text" class="form-control custm-control" id="txtLoanTenure" >
+                                </div>
+                                <div class="range-slider">                      
+                                    <input type="range" class="form-range" min="1" max="30" step="1" id="loanTenureRangeSlider"  >
+                                </div>
+                            </div>    
+                            <div class="row">
+                                <div class="calc-details">
+                                    <h4 class="calc-name">Monthly EMI</h4>
+                                    <h5 class="calc-amt" id="monthEmi"></h5>                                
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="calc-details">
+                                    <h4 class="calc-name">Principle amount</h4>
+                                    <h5 class="calc-amt" id="principleAmt"> </h5>                                
+                                </div>
+                            </div> 
+                            <div class="row">
+                                <div class="calc-details">
+                                    <h4 class="calc-name">Total interest</h4>
+                                    <h5 class="calc-amt" id="totalInterest"></h5>                                
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="calc-details">
+                                    <h4 class="calc-name">Total amount</h4>
+                                    <h5 class="calc-amt" id="totalAmt"></h5>                                
+                                </div>
+                            </div>
+                             
+                        </div>
+                        <div class="col-lg-6">
+                            <figure class="highcharts-figure">
+                                <div id="container"></div> 
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                    
+                </div>
+                <div class="col-lg-4">
+                    <div class="calculator-list">
+                        
+                    </div>
+                    <div>
+                        <ul>
+                            <li> <strong>Popular Calculator </strong> </li>
+                            <li>PPF Calculator</li>
+                            <li>EPF Calculator</li>
+                            <li>EMI Calculator</li>
+                            <li>RD Calculator</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               
+            </div>
+        </div>
+     </div>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+     <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+     <script src="calculator.js"></script>
+</body>
+</html>
