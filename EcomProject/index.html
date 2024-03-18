@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/font-awsome/all.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <header class="bg-gray-800 py-5 px-5 ">
+    <div class="flex justify-between max-w-[1280px] mx-auto">
+    <div class="flex">
+      <img class="w-[160px]" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="logo">
+      <nav>
+      <ul class="flex text-white ml-5" id="pageName">
+        <li class="px-2">  Home </li>
+        <li class="px-2">  Popular Movie </li> 
+        <li class="px-2">Now Playing</li>
+        <li class="px-2">Upcoming Movies</li>
+        <li class="px-2">Top Rated Movie</li>
+      </ul>
+    </nav>
+    </div>
+    <div class="text-white text-right">
+      <input type="text" placeholder="Search Movie..." id="txtSearch" class="rounded-2xl h-9 px-3 text-black focus:outline-none">
+      <i class="fa-regular fa-user"></i>
+    </div>
+    </div>
+  </header>
+
+  <section class="max-w-[1280px] mx-auto py-10" style="height: calc(100vh-64px);">
+    <!-- <div class="flex">
+      <div class="w-3/12">  
+         
+        <p id="movieOverView"> movieOverView</p>  
+      </div>
+      <div class="w-3/12"> movie 2 </div>
+      <div class="w-3/12"> movie 3</div>
+      <div class="w-3/12"> movie 4</div>
+
+    </div> -->
+    <!-- <div class="max-w-10"> movie 2 </div> -->
+    
+      <div id="movieList" class="flex flex-wrap"></div>
+  </section>
+   
+  <footer class="bg-gradient-to-tr from-cyan-950 to-blue-900 py-5 text-center">
+    <img class="w-[150px]" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg" alt="The Movie Database (TMDB)">
+  </footer>
+<script src="js/fetchData.js" type="module"></script>
+     
+     <script>
+
+// https://api.themoviedb.org/3/movie/popular?api_key=c45a857c193f6302f2b5061c3b85e743&language=en-US&page=1
+
+// //movie list
+// fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
+// //
+
+/* genre - category adventure action
+  fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+  fetch('https://api.themoviedb.org/3/genre/tv/list?language=en', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+  */
+ /*
+  ##now playing
+ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+  ##popular
+  fetch('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+  ##top rated
+  fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+
+  ##upcoming
+  fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+ */
+
+
+
+// fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d467ec782dff151504e6dd2f3a4c2fc3&language=en-US&page=1`)
+//   .then(response => response.json())
+//   .then(response => console.log(response))
+//   .catch(err => console.error(err));
+      </script>
+</body>
+</html>
